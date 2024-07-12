@@ -1,5 +1,5 @@
-import characters from "./database/models/characters.ts";
-import { getCharsData } from "./parser.ts";
+import characters from "./database/models/characters.js";
+import { getCharsData } from "./parser.js";
 
 for (let page = 1; page <= 42; page++) {
   const chars = await getCharsData(page);
@@ -11,8 +11,6 @@ for (let page = 1; page <= 42; page++) {
     if (char.id != dbChar.id) {
       throw new Error("character.id and database/character.id is different");
     }
-
-    console.log(char.id);
   }
 }
 

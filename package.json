@@ -5,9 +5,9 @@
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
-    "start": "node --loader ts-node/esm .",
+    "start": "npm run build && node ./dist/main.js",
     "strt": "node --loader ts-node/esm",
-    "build": "tsc",
+    "build": "rimraf ./dist && tsc",
     "dev": "nodemon ./src/main.ts"
   },
   "author": "",
@@ -24,6 +24,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "node-fetch": "^3.3.2",
-    "pg": "^8.12.0"
+    "pg": "^8.12.0",
+    "rimraf": "^6.0.1"
   }
 }

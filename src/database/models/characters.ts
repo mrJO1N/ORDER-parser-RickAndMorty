@@ -1,5 +1,5 @@
-import dbConn from "../connection.ts";
-import { CharacterI } from "../../types.ts";
+import dbConn from "../connection.js";
+import { CharacterI } from "../../types.js";
 
 const queries = {
   createTable() {
