@@ -9,3 +9,6 @@ STACK:
 - node.js
 - node-fetch
 - pg
+
+git:
+https://github.com/mrJO1N/ORDER-parser-RickAndMorty
