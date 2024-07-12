@@ -14,6 +14,10 @@ const connection = new Client({
   host: DB_HOST ?? "localhost",
   database: DB_NAME,
   port: parseInt(DB_PORT ?? "5432", 10),
+  ssl: {
+    rejectUnauthorized: true,
+    ca: readFileSync("./src/postgres/CA.pem").toString(),
+  },
 });
 
-export { connection };
+export default connection;

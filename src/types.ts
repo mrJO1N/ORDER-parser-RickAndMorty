@@ -1,4 +1,4 @@
-export interface CharapterI {
+export interface CharacterI {
   id: number;
   name: string;
   species: string;
@@ -25,5 +25,5 @@ export interface ResponseI {
     next: string | null;
     prev: string | null;
   };
-  results: CharapterI[];
+  results: CharacterI[];
 }

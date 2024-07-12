@@ -1,16 +1,23 @@
-import { CharaptersSubModel } from "./database/models/charapters.ts";
-import {getCharsData} from "./parser.ts";
+import characters from "./database/models/characters.ts";
+import { getCharsData } from "./parser.ts";
 
-const charapters = new CharaptersSubModel();
+for (let page = 1; page <= 42; page++) {
+  const chars = await getCharsData(page);
 
-async function main() {
-  for (let page = 1; page <= 42; page++) {
-    const chars = await getCharsData(page)
-    
-    for (const char of chars) {
-      charapters.addOne(char)
+  for (const char of chars) {
+    characters.addOne(char);
+
+    const dbChar = (await characters.getAll(`id = ${char.id}`)).rows[0];
+    if (char.id != dbChar.id) {
+      throw new Error("character.id and database/character.id is different");
     }
+
+    console.log(char.id);
   }
 }
 
-main()
+console.log(
+  `complete. the database contains ${
+    (await characters.getAll()).rows.length
+  } rows`
+);

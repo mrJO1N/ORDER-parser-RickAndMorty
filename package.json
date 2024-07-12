@@ -1,12 +1,12 @@
 {
-  "name": "tsssssssssss",
+  "name": "for-job",
   "version": "1.0.0",
   "description": "",
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
     "start": "node .",
-    "strt": "ts-node --esm ",
+    "strt": "node --loader ts-node/esm",
     "build": "tsc",
     "dev": "nodemon ./src/main.ts"
   },

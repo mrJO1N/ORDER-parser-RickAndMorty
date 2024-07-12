@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { CharapterI, ResponseI } from "./types.ts";
+import { ResponseI } from "./types.ts";
 
 export const getCharsData = async (pageId: number) => {
   const url = `https://rickandmortyapi.com/api/character/?page=${pageId}`;
