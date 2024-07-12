@@ -5,7 +5,7 @@
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
-    "start": "node .",
+    "start": "node --loader ts-node/esm .",
     "strt": "node --loader ts-node/esm",
     "build": "tsc",
     "dev": "nodemon ./src/main.ts"
